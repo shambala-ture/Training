@@ -1,0 +1,17 @@
+<html>
+	<body>
+		<p id="demo"></p>
+		<p id="demo1"></p>
+		<p id="demo2"></p>
+		<script>
+			function myFunction(a, b) {
+		    return a * b;
+			}
+			document.getElementById("demo").innerHTML = myFunction(4, 3);
+			var x = function (a, b) {return a * b};
+			document.getElementById("demo1").innerHTML = x;
+			var x = function (a, b) {return a * b};
+			document.getElementById("demo2").innerHTML = x(3,4);
+		</script>
+	</body>
+</html>
