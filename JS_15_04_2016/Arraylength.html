@@ -1,0 +1,15 @@
+	<html>
+	<body>
+		<p>The length property returns the length of an array.</p>
+		<p id="demo"></p>
+		<button onclick="myFunction()">Try it</button>
+		<script>
+			var fruits = ["Banana", "Orange", "Apple", "Mango"];
+			document.getElementById("demo").innerHTML = fruits;
+			function myFunction(){
+			fruits[fruits.length] = "Lemon";
+			document.getElementById("demo").innerHTML = fruits;
+		}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<style>
+			a[target] {
+	    	background-color: yellow;
+			}
+			a[target=_blank] {
+	    	background-color: red;
+			}
+			[title~=birds] {
+	    	border: 5px solid pink;
+			}
+			[class|=top] {
+	    	background: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<p>The links with a target attribute gets a yellow background:</p>
+		<p>The links with a target="_blank" attribute gets a red background:</p><br>
+		<a href="http://www.w3schools.com">w3schools.com</a>
+		<a href="http://www.disney.com" target="_blank">disney.com</a>
+		<a href="http://www.wikipedia.org" target="_top">wikipedia.org</a><br><br>
+		<p>All images with the title attribute containing the word "birds" get a pink border.</p><br>
+		<img src="download.jpg" title="klematis flower" width="150" height="113">
+		<img src="images.jpg" title="birds" width="224" height="162">
+		<img src="images.jpg" title="birds_test" width="224" height="162">
+		<img src="white.jpg" title="whiteflower" width="200" height="358"><br>
+		<h1 class="top-header">Welcome</h1>
+		<p class="top-text">Hello world!</p>
+		<p class="topcontent">Are you fine?</p>
+	</body>
+</html>

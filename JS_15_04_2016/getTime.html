@@ -1,0 +1,17 @@
+<html>
+	<body>
+		<p>The internal clock in JavaScript starts at midnight January 1, 1970.</p>
+		<p>The getTime() function returns the number of milliseconds since then: and the getFullYear() method returns the full year of a date:</p>
+		<p id="demo"></p>
+		<p id="demo1"></p>
+		<p id="demo2"></p>
+		<script>
+			var d = new Date();
+			document.getElementById("demo").innerHTML = d.getTime();
+			var a = new Date();
+			document.getElementById("demo1").innerHTML = a.getFullYear();
+			var b = new Date();
+			document.getElementById("demo2").innerHTML = b.getDay();
+		</script>
+	</body>
+</html>

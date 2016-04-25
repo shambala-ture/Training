@@ -1,0 +1,15 @@
+<html>
+	<body>
+		<p> The JavaScript method delete</p>
+		<button onclick=myFunction()>try</button>
+		<p id="demo"></p>
+		<script>
+			var cars =["Swift", "Indica", "Accent", "Volvo", "Audi"];
+			document.getElementById("demo").innerHTML=cars;
+			function myFunction(){
+				delete cars[0];
+				document.getElementById('demo').innerHTML= cars;
+			}
+		</script>
+	</body>
+</html>

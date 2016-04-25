@@ -1,0 +1,13 @@
+<html>
+	<body>
+		<p id="demo"></p>
+		<p id="demo1"></p>
+		<script>
+			var s =Date.parse("March 21, 2012");
+			document.getElementById('demo').innerHTML=s;
+			var msec = Date.parse("March 21, 2012");
+			var d = new Date(msec);
+			document.getElementById("demo1").innerHTML = d;
+		</script>
+	</body>
+</html>

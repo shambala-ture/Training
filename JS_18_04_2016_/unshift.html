@@ -1,0 +1,15 @@
+<html>
+	<body>
+		<p> The JavaScript method unshift()</p>
+		<button onclick=myFunction()>try</button>
+		<p id="demo"></p>
+		<script>
+			var cars =["Swift", "Indica", "Accent", "Volvo", "Audi"];
+			document.getElementById("demo").innerHTML=cars;
+			function myFunction(){
+				cars.unshift("ABC");
+				document.getElementById('demo').innerHTML= cars;
+			}
+		</script>
+	</body>
+</html>

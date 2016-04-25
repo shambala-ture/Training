@@ -1,0 +1,15 @@
+<html>
+	<body>
+		<p> The JavaScript method pop()</p>
+		<button onclick=myFunction()>try</button>
+		<p id="demo"></p>
+		<script>
+			var cars =["Swift", "Indica", "Accent", "Volvo", "Audi"];
+			document.getElementById("demo").innerHTML=cars;
+			function myFunction(){
+				cars.pop();
+				document.getElementById('demo').innerHTML= cars;
+			}
+		</script>
+	</body>
+</html>

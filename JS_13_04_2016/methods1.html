@@ -1,0 +1,21 @@
+<html>
+	<body>
+		<p id="p1">Please locate where 'locate' occurs!.</p>
+		<button onclick="myFunction()">Try it</button>last indexof<br><br>
+		<button onclick="myFunction1()">Try it</button>search
+		<p id="demo"></p>
+		<p id="demo1"></p>
+		<script>
+			function myFunction() {
+		    var str = document.getElementById("p1").innerHTML;
+		    var pos = str.lastIndexOf("locate");
+		    document.getElementById("demo").innerHTML = pos;
+			}
+			function myFunction1() {
+		    var str = document.getElementById("p1").innerHTML;
+		    var pos = str.search("locate");
+		    document.getElementById("demo1").innerHTML = pos;
+			}
+		</script>
+	</body>
+</html>

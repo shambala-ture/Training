@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <style>
+      #dropbtn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 20px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        margin-left: -60;
+        margin-top: -38px;
+      }
+
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: underline;
+        display: block;
+
+      }
+
+      .dropdown-content a:hover {background-color: #f1f1f1}
+
+      .dropbtn-media:hover .dropdown-content {
+        display: block;
+      }
+
+      .dropbtn-language:hover .dropdown-content{
+        display: block;
+      }
+
+      .dropdown:hover .dropbtn {
+        background-color: #3e8e41;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Dropdown Menu</h2>
+    <p>Move the mouse over the button to open the dropdown menu.</p>
+    <div class="dropdown">
+      <button id="dropbtn">Travel</button>
+      <button id="dropbtn">Trade</button>           
+      <button class="dropbtn-media" id="dropbtn">Media <div class="dropdown-content">
+        <a href="#">Ministry of Tourism</a>
+        <a href="#">Photographs</a>
+        <a href="#">English</a>
+        <a href="#">Finish Language</a>
+        <a href="#">Magazines</a>
+        <a href="#">Articles</a>
+      </div></button>
+      <button id="dropbtn">Essentials</button>
+      <button id="dropbtn">Discover India</button>
+      <button id="dropbtn">Festivals &amp; Cuisines</button>
+      <button id="dropbtn">e-Books</button>
+      <button class="dropbtn-language" id="dropbtn">Languages <div class="dropdown-content">
+        <a href="#">Hindi</a>
+        <a href="#">German</a>
+        <a href="#">Russian</a>
+        <a href="#">Chinese</a>
+        <a href="#">Arabic</a>
+        <a href="#">French</a>
+        <a href="#">Korean</a>
+        <a href="#">Japanese</a>
+        <a href="#">Spanish</a>
+      </div></button>
+     </div>
+  </body>
+</html>

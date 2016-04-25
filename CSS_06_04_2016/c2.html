@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <style>
+      ol {
+        counter-reset: section;
+        list-style-type: none;
+      }
+
+      li::before {
+        counter-increment: section;
+        content: counters(section,".") " ";
+      }
+    </style>
+  </head>
+  <body>
+    <ol>
+      <li>Chapter</li>
+      <li>Chapter    
+        <ol>
+          <li>Introduction</li>
+          <li>Abbreviations</li>
+          <li>ABC
+            <ol>
+              <li>LMN</li>
+              <li>PQR</li>
+              <li>XYZ</li>
+            </ol>
+          </li>
+          <li>Conclusion</li>
+        </ol>
+      </li>
+      <li>Chapter</li>
+      <li>Chapter</li>
+    </ol>
+    <ol>
+      <li>Chapter</li>
+      <li>Chapter</li>
+    </ol>
+  </body>
+</html>

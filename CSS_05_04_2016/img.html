@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <style>
+      img {
+        opacity: 0.4;
+        filter: alpha(opacity=40); /* For IE8 and earlier */
+      }
+      img:hover {
+        opacity: 1.0;
+        filter: alpha(opacity=100); /* For IE8 and earlier */
+      }
+      div.background {
+        background: url(download.jpg) repeat;
+        border: 2px solid black;
+      }
+
+      div.transbox {
+        margin: 30px;
+        background-color: #ffffff;
+        border: 1px solid black;
+        opacity: 0.6;
+        filter: alpha(opacity=60); /* For IE8 and earlier */
+      }
+
+      div.transbox p {
+        margin: 5%;
+        font-weight: bold;
+        color: #000000;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Image Transparency</h1>
+    <img src="download.jpg" width="150" height="113" alt="klematis"><br><br><br>
+    <div class="background">
+      <div class="transbox">
+        <p>This is some text that is placed in the transparent box.</p>
+      </div>
+    </div>
+  </body>
+</html>

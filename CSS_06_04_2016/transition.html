@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <style> 
+      div {
+        width: 100px;
+        height: 50px;
+        background: red;
+        color: white;
+        font-weight: bold;
+        -webkit-transition: width 2s;
+        transition: width 2s;
+      }
+      div.head {
+        width: 100px;
+        height: 50px;
+        background: green;
+        color: white;
+        font-weight: bold;
+        -webkit-transition: width 2s;
+        transition: width 2s;
+      }
+      div:hover {
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>This example does not work in Internet Explorer 9 and earlier versions.</p>
+    <div>This</div>
+    <div class="head">is</div>
+    <div>very</div>
+    <div class="head">beautiful</div>
+    <div>concept.</div>
+    <p>Hover over the div elements above, to see the different transition effects.</p>
+  </body>
+</html>

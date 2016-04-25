@@ -1,0 +1,16 @@
+<html>
+	<body>
+		<button onclick="myFunction()">Try</button>
+		<p id="demo"></p>
+		<script>
+			var Numbers=[11,54,43,34,25,24,8,4];
+			document.getElementById('demo').innerHTML=Numbers;
+			function myFunction(){
+				Numbers.sort(function(a, b){return b-a});
+				document.getElementById("demo").innerHTML=Numbers;
+				// Numbers.sort(function(a, b){return b>a});
+				// document.getElementById("demo").innerHTML=Numbers;
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,14 @@
+<html>
+	<body>
+		<button onclick="myFunction()">Try</button>
+		<p id="demo"></p>
+		<script>
+			var cars=["Maruti", "BMW", "Swift", "Audi", "Accent"];
+			document.getElementById('demo').innerHTML=cars;
+			function myFunction(){
+				cars.splice(1,1,"Volvo", "Fiat");
+				document.getElementById("demo").innerHTML=cars;
+			}
+		</script>
+	</body>
+</html>

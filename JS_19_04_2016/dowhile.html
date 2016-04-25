@@ -1,0 +1,18 @@
+<html>
+	<body>
+		<button onclick="Fun()">Click here</button>
+		<p id="demo"></p>
+		<script>
+			function Fun(){
+			text="";
+			var i=0;
+			do{
+				text += "<br> Number is " +i;
+				i=i+2;
+			}
+			while(i<10)
+			document.getElementById('demo').innerHTML= text;
+			}
+		</script>
+	</body>
+</html>

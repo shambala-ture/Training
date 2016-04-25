@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <style>
+      body{
+      	background-color: black;
+      }
+      h1{
+      	font-size: 70px;
+      	font-family: "Times New Roman";
+      	text-align: center;
+      	color: yellow;
+      	margin-top: 30px;
+      }
+      p{
+      	font-size: 20px;
+      	font-size: italic;
+      	text-align: center;
+      	color: yellow;
+      	margin-top: 10px;
+      }
+      div {
+        background-color: 'grey';
+        width: 800px;
+        height: 308px;
+        padding: 25px;
+        border: 25px solid white;
+        margin-left: 182px;
+        margin-right: 182px;
+        text-align: left;
+        color: white;
+      }
+      div:hover {
+        background-color: red;
+      }
+
+      p1{
+        color:white;
+        font-size: 20px;
+      }
+      h2{
+      	font-size: 25px;
+      	font-family: "Times New Roman";
+      	text-align: center;
+      	color: blue;
+      	
+      }
+      .head{
+      	background-color: white;
+        width: 800px;
+        height: 250px;
+        padding: 25px;
+        border: 25px solid 'grey';
+        margin-left: 182px;
+        margin-right: 182px;
+        text-align: left;
+      }
+
+      li{
+      	display: block;
+      }
+    </style>
+    <body>
+      <h1>Rubular<br>
+      <p>a Ruby regular expression editor</p></h1>
+      <div>
+      	<p1>Your regular expression:</p1><br>
+      	<textarea style="background-color:black;" name="message" rows="2" cols="70"></textarea>
+        <br>
+        <p1>Your test string:</p1><br>
+        <textarea style="background-color:black;" name="message" rows="10" cols="50"></textarea><br><br>
+          <form>
+            Wrap words<input type="radio" name="Wrap words" value="Wrap words" checked>Show invisibles<input type="radio" name="Show invisibles" value="Show invisibles">Ruby version
+              <select name="Ruby version">
+                <option value="volvo">2.1.5</option>
+                <option value="saab">1.9.3</option>
+                <option value="fiat">2.2.3</option>
+                <option value="audi">1.8.7</option>
+              </select><br><br>
+              <input style="background-color:lightgrey;padding:5px;margin-left:290px;margin-right:-38px;" type="submit" value="make permalink"><input style="background-color:lightgrey;padding:5px;margin-left:50px;margin-right:280px;" type="submit" value="clear fields">
+          </form>
+      </div><br>
+      <h2>Regex quick reference</h2>
+      <div class="head">
+      	<ul>
+      		<li>[abc]</li><li>[^abc]</li><li>[a-z]</li><li>[a-zA-Z]</li><li>[^]</li><li>[$]</li><li>[\A]</li><li>[\z]</li>
+        </ul>
+      </div>
+    </body>
+  </head>
+</html>

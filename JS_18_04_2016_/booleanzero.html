@@ -1,0 +1,48 @@
+<html>
+	<body>
+		<p>Display the Boolean value of 0:</p>
+		<button onclick="myFunction()">Try it</button>
+		<p id="demo"></p>
+		<p>Display the Boolean value of -0:</p>
+		<button onclick="myFunction1()">Try it</button>
+		<p id="demo1"></p>
+		<p>Display the Boolean value of Empty String:</p>
+		<button onclick="myFunction2()">Try it</button>
+		<p id="demo2"></p>
+		<p>Display the Boolean that should be not assign any value:</p>
+		<button onclick="myFunction3()">Try it</button>
+		<p id="demo3"></p>
+		<p>Display the Boolean value of null:</p>
+		<button onclick="myFunction4()">Try it</button>
+		<p id="demo4"></p>
+		<p>Display the Boolean value of NaN function:</p>
+		<button onclick="myFunction5()">Try it</button>
+		<p id="demo5"></p>
+		<script>
+			function myFunction() {
+		    var x = 0;
+		    document.getElementById("demo").innerHTML = Boolean(x);
+			}
+			function myFunction1() {
+		    var x = -0;
+		    document.getElementById("demo1").innerHTML = Boolean(x);
+			}
+			function myFunction2() {
+		    var x = "";
+		    document.getElementById("demo2").innerHTML = Boolean(x);
+			}
+			function myFunction3() {
+		    var x;
+		    document.getElementById("demo3").innerHTML = Boolean(x);
+			}
+			function myFunction4() {
+		    var x = null;
+		    document.getElementById("demo4").innerHTML = Boolean(x);
+			}
+			function myFunction5() {
+		    var x = 10 / "H";
+		    document.getElementById("demo5").innerHTML = Boolean(x);
+			}
+		</script>
+	</body>
+</html>

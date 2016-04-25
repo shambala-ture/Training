@@ -1,0 +1,22 @@
+<html>
+	<body>
+		<p>Replace "microsoft" with "W3Schools" in the paragraph below: with Regular Expression</p>
+		<button onclick="myFunction()">Try it</button>
+		<p id="demo">Please visit Microsoft!</p>
+		<p>Replace "microsoft" with "W3Schools" in the paragraph below: with String</p>
+		<button onclick="myFunction1()">Try it</button>
+		<p id="demo1">Please visit Microsoft!</p>
+		<script>
+			function myFunction() {
+		    var str = document.getElementById("demo").innerHTML; 
+		    var txt = str.replace(/microsoft/i,"W3Schools");
+		    document.getElementById("demo").innerHTML = txt;
+		}
+		function myFunction1() {
+		    var str = document.getElementById("demo1").innerHTML; 
+		    var txt = str.replace("Microsoft","W3Schools");
+		    document.getElementById("demo1").innerHTML = txt;
+		}
+		</script>
+	</body>
+</html>

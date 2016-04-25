@@ -1,0 +1,14 @@
+<html>
+	<body>
+	<button onclick="getElementById('demo').innerHTML=Date()">The time is? without using script tag</button>
+	<p id="demo"> </p>
+	<button onclick="this.innerHTML=Date()">The time is? on click button</button><br><br>
+	<button onclick="displayDate()">The time is? with using script tag</button>
+	<script>
+		function displayDate() {
+		    document.getElementById("demo1").innerHTML = Date();
+		}
+</script>
+<p id="demo1"></p>
+	</body>
+</html>

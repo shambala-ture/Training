@@ -1,0 +1,63 @@
+<html>
+  <style>
+    input[type=text], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    input[type=submit] {
+      width: 100%;
+      background-color: red;
+      color: black;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color:yellow;
+    }
+
+    div {
+      border-radius: 5px;
+      background-color: blue;
+      padding: 40px;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      background-color: #f1f1f1;
+    }
+  </style>
+  <body>
+    <h3>Using CSS to style a HTML Form</h3>
+    <div>
+      <form action="sample.html">
+        <label for="fname">First Name</label>
+          <input type="text" id="fname" name="firstname">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lastname">
+
+        <label for="country">State</label>
+          <select id="country" name="country">
+            <option value="india">India</option>
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+            <option value="australia">South Africa</option>
+          </select>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </body>
+</html>
