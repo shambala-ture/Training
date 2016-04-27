@@ -1,0 +1,107 @@
+<html>
+<head>
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+ul li a{
+        background: -webkit-linear-gradient(black,grey); /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(black,grey); /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(black,grey); /* For Firefox 3.6 to 15 */
+        background: linear-gradient(black,grey); /* Standard syntax (must be last) */
+}
+li {
+    float: left;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+</style>
+</head>
+<body>
+
+<ul style="margin-right:368px;">
+  <li><a href="https://www.google.co.in/">Travel</a></li>
+      <li><a href="https://www.google.co.in/">Trade</a></li>
+      <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn" onclick="myFunction()">Media</a>
+    <div class="dropdown-content" id="myDropdown">
+          <a href="https://www.google.co.in/">Ministry of Tourism</a>
+          <a href="https://www.google.co.in/">Photographs</a>
+          <a href="https://www.google.co.in/">English</a>
+          <a href="https://www.google.co.in/">Finish Language</a>
+          <a href="https://www.google.co.in/">Magazines</a>
+          <a href="https://www.google.co.in/">Articles</a>
+       </div>
+     </li>
+      <li><a href="https://www.google.co.in/">Essentials</a></li>
+      <li><a href="https://www.google.co.in/">Discover India</a></li>
+      <li><a href="https://www.google.co.in/">Festivals &amp; Cuisines</a></li>
+      <li><a href="https://www.google.co.in/">e-Books</a></li>
+      <li><a href="https://www.google.co.in/">Languages</a></li>
+</ul>
+
+<h3>Dropdown Menu inside a Navigation Bar</h3>
+<p>Click on the "Dropdown" link to see the dropdown menu.</p>
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var d = 0; d < dropdowns.length; d++) {
+      var openDropdown = dropdowns[d];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+</body>
+</html>
