@@ -1,175 +1,7 @@
 <html>
 	<head>
+		 <link rel="stylesheet" href="style.css">
 		<title> Vital Partners</title>
-			<style>
-				h4{
-					font-family: serif;
-					font-size: 20px;
-					float: right;
-					color:#5C5C5C;
-					margin-right: 370px;
-				}
-				.search{
-					margin-right: -452;
-					float: right;
-					margin-top: 27px;
-					padding:9px;
-				}
-				.sec{
-					margin-left:238px;
-					border:1px grey solid;
-					margin-right:249px;
-					margin-top:69px;
-					border-radius:14px;
-					margin-bottom:87px;
-				}
-				ul.head{
-					display: inline-flex;
-					list-style-type: none;
-					float: right;
-					margin-right: 160px;
-					margin-top: -70px;
-				}
-				li{
-					padding: 11px;
-				}
-				a:link {
-					color: #5C5C5C;
-					text-decoration: none;
-				}
-				a:hover {
-					color: green;
-					text-decoration: none;
-				}
-				.form{
-					margin-top:-41px;
-				}
-				li .form{
-					margin-left: 343px;
-				}
-				.space{
-					margin-left: 40px;
-				}
-				ul{
-					display: inline;
-					list-style-type: none;
-				}
-				ul .bday{
-					display: inline-flex;
-					list-style-type: none;
-				}
-				input[type=submit], input[type=reset] {
-					background-color: green;
-					border: none;
-					color: white;
-					padding: 16px 32px;
-					text-decoration: none;
-					margin: 11px 300px;
-					cursor: pointer;
-					border-radius: 8px;
-					margin-bottom: 52px;
-					width:172px;
-				}
-				.section{
-					background-color: grey;
-					padding: 10px;
-					display: block;
-					width: 1252px;
-				}
-				.container{
-					width: 996px;
-				}
-				.free{
-					width: 100%;
-					height: auto;
-					text-align: center;
-				}
-				.footer{
-					padding: 76px 0px 0px;
-					width: 1272px;
-					background-color:black;
-					height: 553px;
-				}
-				.footer1{
-					width: 100%;
-				}
-				.left{
-					float: left;
-				}
-				.right{
-					float: right;
-					color: white;
-					margin-right: 307px;
-					margin-top: -6px;
-					font-size: 20px;
-				}
-				.footer2{
-					width: 100%;
-					height: auto;
-					margin-bottom: 95px;
-				}
-				.call{
-					display: inline-block;
-					color: white;
-					margin-right: 90px;
-					margin-left: -291px;
-					font-size: 35px
-				}
-				.padding{
-					padding: 0px 8px;
-					box-sizing: border-box;
-				}
-				.first{
-					width: 33.33%;
-					float: left;
-					box-sizing: border-box;
-					font-family: Verdana,sans-serif;
-					font-size: 15px;
-					line-height: 5.5px;
-					color: grey;
-					margin-left: 111px;
-					margin-top:49px;
-				}
-				.Link1{
-					display: inline;
-					float: left;
-					height: 0px;
-					margin-top: 0px;
-					margin-right: 10px;
-					margin-bottom: 0px;
-					margin-left: 10px;
-					width: 31%;
-				}
-				.Link1 ul li{
-					padding: 0px 0px 20px 12px;
-					list-style: outside none none;
-					background-image: url("icon8.png");
-					background-repeat: no-repeat;
-					background-position: left none;
-				}
-				.Link2{
-					display: inline;
-					float: left;
-					height: 0px;
-					margin-top: 32px;
-					margin-right: 10px;
-					margin-bottom: 0px;
-					margin-left: 247px;
-					width: 31%;
-					color: grey;
-				}
-				.Link2 ul li{
-					padding: 0px 0px 20px 12px;
-					list-style: outside none none;
-					background-image: url("icon9.png");
-					background-repeat: no-repeat;
-					background-position: left none;
-				}
-				.second {
-					margin-top: -33px;
-					margin-left: -89px;
-				}
-			</style>
 	<body>
 		<img src="logo.png" alt="Vital Logo" style = "width:346px;height:148px;margin-top:-10px;margin-left:135px"> 
 		<h4><i>Call Us Today! (02) 9017 8413</i></h4>
@@ -276,14 +108,22 @@
 								</div>
 							</li><br><br><br>
 		<hr style="width:708px;margin-right:64"><br>
-		<input type="submit" value="Submit"><img src="icon8.png" style = "width:13px;height:14px;margin-right:386px;float:right;margin-top:-35px"></input>
+		<div class="submit">
+			<a href="#">Submit <img src="small_triangle.png"></a>
+		</div>
 	</div>
 		<div class="section">
 			<div class="container">
 				<div class="free">
-					<img src="icon5.png" style = "width:58px;height:69px;margin-top:11px;margin-left:230px;">
-					<h1 style="display:inline;color:white;font-text:22px;padding:10px">FREE: Men Are From Mars</h1>
-					<a href="#">Download Now</a>
+					<div>
+					 <img src="icon5.png" style = "display:inline;width:58px;height:69px;margin-top:5px;margin-left:294px;">
+				  </div>
+					<div style = "padding:22px;">
+					 <h1 style="display:inline;color:white;font-text:22px;padding:28px">FREE: Men Are From Mars</h1>
+				  </div>
+				  <div class="free1">
+					 <a href="#">Download Now</a>
+				  </div>
 				</div>
 			</div>		
 		</div>
@@ -296,59 +136,94 @@
 					<i>Shortcut your search to happiness right now.Live<br> a life without regrets and take action today!</i>
 				</p>
 				</div>
-				:: after
 				<div>
+					<div>
 					<h1 class="call"><i>Call Us Today! (02) 9017<br>8413</i></h1>
-					<a href="#">Book an Appoinment <img src="icon7.png"></a>
-					<a href="#">Contact a Consultant <img src="icon6.png"></a>
 				</div>
-				<div class="padding">
-					<div class="first">
-						<h2>
-							CONTACT INFO
-						</h2><br>
-						<P>4/220 George St, Syndney NSW 2000</P>
-						<P>Phone:(02)9017 8413</P>
-						<P>Email:info@syd.vitalpartners.com.au</P><br><br>
-						<P>Canberra City Act 2600</P>
-						<P>Phone:(02)9017 8426</P>
-						<P>Email:can@syd.vitalpartners.com.au</P>
+				<div class="book">
+					<a href="#" style="float:right;margin-right:464px;margin-top:-95">Book an Appoinment <img src="icon7.png"></a>
 					</div>
-					<div class="Link1">
-    			<h2 style="color:grey;font-size:23px;margin-top:55px;margin-left:-90">
-       		 RECENT POSTS
-    			</h2><br>
-    			<div class="second">
-        	<ul>
-            <li><a href="#">How to Recover After a Bad Date</a></li>
-            <li><a href="#">Review | Vital Partners Review</a></li>
-            <li><a href="#">Review | Vital Partners Review</a></li>
-            <li><a href="#">Review | Vital Partners Derek and Julie</a></li>
-            <li><a href="#">7 Rules for a Happy Relationship | Vital <br>Partners Dating Sydney</a></li>
-        	</ul>
-        </div>
-    			</div>
-    			<div class="Link2">
-    			<h2> RECENT TWEETS</h2>
-    		<div>
-        <ul>
-          <li>
-            <p style="margin-left:16px;margin-top:-13px">Are you being vulnerable to find love? via offline…</p>
-            <div style="margin-left:16px;margin-top:-14px">
-             <a href="#">http://t.co/hGCgHEU6If</a>
-            </div>
-            <div style="margin-left:282px;margin-top:-22px">1 week ago</div>
-          </li>
-          <li>
-          	<p style="margin-left:16px;margin-top:5px">Are you being vulnerable to find love? via offline…</p>
-            <div style="margin-left:16px;margin-top:-13px">
-             <a href="#">http://t.co/hGCgHEU6If</a>
-            </div>
-            <div style="margin-left:282px;margin-top:-22px">2 week ago</div>
-          </li>
-        </ul>
-    </div>
+					<div class="book">
+					<a href="#" style="float:right;margin-right:256px;margin-top:-95">Contact a Consultant <img src="icon6.png"></a>
+					</div>
+				</div>
+		<div class="padding">
+		<div class="first">
+			<h2>
+			CONTACT INFO
+			</h2><br>
+			<P>4/220 George St, Syndney NSW 2000</P>
+			<P>Phone:(02)9017 8413</P>
+			<P>Email:info@syd.vitalpartners.com.au</P><br><br>
+			<P>Canberra City Act 2600</P>
+			<P>Phone:(02)9017 8426</P>
+			<P>Email:can@syd.vitalpartners.com.au</P>
+		</div>
+		<div class="Link1">
+			<h2 style="color:grey;font-size:23px;margin-top:55px;margin-left:-90">
+			RECENT POSTS
+			</h2><br>
+			<div class="second">
+				<ul>
+					<li><a href="#">How to Recover After a Bad Date</a></li>
+					<li><a href="#">Review | Vital Partners Review</a></li>
+					<li><a href="#">Review | Vital Partners Review</a></li>
+					<li><a href="#">Review | Vital Partners Derek and Julie</a></li>
+					<li><a href="#">7 Rules for a Happy Relationship | Vital <br>Partners Dating Sydney</a></li>
+				</ul>
 			</div>
+		</div>
+		<div class="Link2">
+			<h2> RECENT TWEETS</h2>
+			<div>
+				<ul>
+					<li>
+						<p style="margin-left:16px;margin-top:-13px">Are you being vulnerable to find love? via offline…</p>
+						<div class="tweet1">
+						<a href="#">http://t.co/hGCgHEU6If</a>
+						</div>
+						<div style="margin-left:282px;margin-top:-22px">1 week ago</div>
+					</li>
+					<li>
+						<p style="margin-left:16px;margin-top:5px">Are you being vulnerable to find love? via offline…</p>
+						<div class="tweet1">
+						<a href="#">http://t.co/hGCgHEU6If</a>
+						</div>
+						<div style="margin-left:282px;margin-top:-22px">2 week ago</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		</div>
+		<div class="follow">
+			<div class="follow_link1">
+				&copy; VitalPartners.com.au
+			</div>
+			<div class="follow_link2">
+				<a href="contact_us.html">Contact </a> | 
+				<a href="terms_of_use.html">Terms of Use</a> |  
+				<a href="privacy_policy.html">Privacy Policy</a> |  
+				<a href="disclaimer.html">Disclaimer</a>
+			</div>
+			<div class="follow_link3">
+				<span>FOLLOW US:</span>
+				<ul class="style">
+				<li class="style1"><a href="#"></a></li>
+				<li class="style2"><a href="#"></a></li>
+				<li class="style3"><a href="#"></a></li>
+				<li class="style4"><a href="#"></a></li>
+				<li class="style5"><a href="#"></a></li>
+			</ul>
+			</div>
+		</div>
+		<div class="last">
+			<div>
+			<a href="#" style="color:grey;margin-left:435px;text-decoration:none">Who Designed This Site?</a>
+		</div>
+		<div>
+			<a href="#" style="color:grey;float:right;margin-top:-18px;margin-right:433px;text-decoration:none">Who  Built This Site?</a>
+		</div>
+		</div>
 	</body>
 	</head>
 </html>
