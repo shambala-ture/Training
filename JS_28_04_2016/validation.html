@@ -2,6 +2,103 @@
 	<head>
 		 <link rel="stylesheet" href="style.css">
 		<title> Vital Partners</title>
+	</head>
+	<script type="text/javascript">
+      function validate()
+      {
+      	
+         if( document.myForm.Name.value == "" || document.myForm.Name.value == null)
+         {
+            alert( "Please provide your First Name!" );
+            document.myForm.Name.focus() ;
+            return false;
+         }
+       
+       
+         if(document.myForm.LName.value == "" || document.myForm.LName.value == null)
+         {
+            alert( "Please provide your Last Name!" );
+            document.myForm.LName.focus() ;
+            return false;
+         }
+     
+         if( document.myForm.PhoneNo.value == "" || isNaN( document.myForm.PhoneNo.value ) ||
+         document.myForm.PhoneNo.value.length != 10 )
+         {
+            alert( "Please provide a PhoneNo in the format ##########." );
+            document.myForm.PhoneNo.focus() ;
+            return false;
+         }
+       
+	       
+         if( document.myForm.Office.value == "" || isNaN( document.myForm.Office.value ) ) {
+            alert( "Please provide a OfficeNo in the format ##########." );
+            document.myForm.Office.focus() ;
+            return false;
+         }
+	       
+ 
+            
+         	  var x=document.myForm.email.value;
+            var atposition=x.indexOf("@");  
+            var dotposition=x.lastIndexOf(".");  
+            if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length)
+            {  
+            alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+            return false;  
+            }    
+       		
+         if(document.myForm.psw.value.length<8 || document.myForm.psw.value.length>12)
+         {
+ 				   alert("Password must between 8 to 12 Number & Alphanumeric characters.");
+ 				   return false;
+ 				 }
+         else if(/^[a-zA-Z0-9- ]+$/.test(document.myForm.psw.value) == false) {
+ 			     alert(" No Special characters.");
+ 			     return false;
+ 				 }
+
+       if(document.myForm.cpsw.value.length<8 || document.myForm.cpsw.value.length>12)
+         {
+ 				   alert("Confirm Password must between 8 to 12 Number & Alphanumeric characters.");
+ 				   return false;
+ 				 }
+         else if(/^[a-zA-Z0-9- ]+$/.test(document.myForm.psw.value) == false) {
+ 			     alert(" No Special characters.");
+ 			     return false;
+ 				 }
+
+
+				var firstpassword=document.myForm.psw.value;  
+				var secondpassword=document.myForm.cpsw.value;  
+				  
+				if(firstpassword==secondpassword){  
+				return true;  
+				}  
+				else{  
+				alert("password must be same!");  
+				return false;  
+				}  
+ 
+
+				var a = document.myForm.Aboutyou.value;
+				if(a=="")
+				{
+				alert("Please Enter Your Details Here");
+				return false;
+  			 }
+        
+				{
+					var select = document.getElementById("selectmonth");
+					if(select.options.selectIndex == 0)
+					{ 
+					return false; 
+					}
+					return true;
+				}
+			}
+			
+      </script>
 	<body>
 		<img src="logo.png" alt="Vital Logo" style = "width:346px;height:148px;margin-top:-10px;margin-left:135px"> 
 		<h4><i>Call Us Today! (02) 9017 8413</i></h4>
@@ -16,37 +113,40 @@
 		</ul>
 		<img src="hbg4.png" alt="Vital LifeCycle" style = "width:1304px;height:174px;margin-left:-11px">
 		<div class="sec">
+     <form action="val.html" name="myForm" onsubmit="return(validate());">
 			<ul class="form">
 				<li class="space">
-					<div><label>First Name</lable><br><input type="text" name="firstname" required></input></div>
-					<div class="form"><label>Last Name<br></label><input type="text" name="lastname" required></input></div></li>
+					<div><label>First Name</lable><br><input type="text" name="Name" ></input></div>
+					<div class="form"><label>Last Name<br></label><input type="text" name="LName"></input></div></li>
 				<li class="space">
-					<div><label>Phone No</lable><br><input type="text" name="quantity" pattern="[0-9]{10}" required></input></div>
-					<div class="form"><label>Office No<br></label><input type="text" name="quantity" required></input></div></li>
+					<div><label>Phone No</lable><br><input type="text" name="PhoneNo" ></input></div>
+					<div class="form"><label>Office No<br></label><input type="text" name="Office"></input></div></li>
 				<li class="space">
 					<div><label>E-mail</lable><br><input type="email" name="email" autocomplete="off"></input></div>
-					<div class="form"><label>Password</lable><br><input type="password" name="psw" pattern="[0-9]{12}"  required></li>
+					<div class="form"><label>Password</lable><br><input type="password" name="psw"></li>
 				<li class="space">
-					<div><label>Confirm Password</lable><br><input type="password" name="psw" required></input></div>
-					<div class="form"><label>My Birthdate Is</lable><br>
-						<ul class="bday">
-							<li style="margin-left:-52px">
-								<select class="select month" name="month">
-								<option value="Jan">Jan</option>
-								<option value="Feb">Feb</option>
-								<option value="March">March</option>
-								<option value="April">April</option>
-								<option value="May">May</option>
-								<option value="June">June</option>
-								<option value="July">July</option>
-								<option value="Aug">Aug</option>
-								<option value="Sep">Sep</option>
-								<option value="Oct">Oct</option>
-								<option value="Nov">Nov</option>
-								<option value="Dec">Dec</option></select>
-							</li>
-							<li>
+					<div><label>Confirm Password</lable><br><input type="password" name="cpsw"></input></div>
+							<div class="form"><label>My Birthdate Is</lable><br>
+								<ul class="bday">
+								<li style="margin-left:-52px">
+								<select id="selectmonth" name="month">
+								<option value="-1" selected>Month</option>
+								<option value="1">Jan</option>
+								<option value="2">Feb</option>
+								<option value="3">March</option>
+								<option value="4">April</option>
+								<option value="5">May</option>
+								<option value="6">June</option>
+								<option value="7">July</option>
+								<option value="8">Aug</option>
+								<option value="9">Sep</option>
+								<option value="10">Oct</option>
+								<option value="11">Nov</option>
+								<option value="12">Dec</option></select>
+								</li>
+								<li>
 								<select class="select day" name="day">
+								<option value="-1" selected>Day</option>
 								<option value="1">01</option>
 								<option value="2">02</option>
 								<option value="3">03</option>
@@ -78,40 +178,42 @@
 								<option value="29">29</option>
 								<option value="30">30</option>
 								<option value="31">31</option></select>
-							</li>
-							<li>
+								</li>
+								<li>
 								<select class="select year" name="year">
 								<option value="year">year</option></select>
-							</li>
-						</ul>
-					</div>
-				</li>
-				<li class="space">
-					<div><label>Age</label><br>
-						<input type="text" name="age"></input></div>
-					<div class="form"><label>Gender</label><br>
-						<ul class="bday">
-							<li style="margin-left:-52px">
-								<input type="radio" name="gender" value="male"> Male</li><li>
-								<input type="radio" name="gender" value="female"> Female</li>
-							</ul>
-						</div><br>
-							<li class="space"><div style="margin-top:-22px"><label>Interest</label><br>
-								<ul class="bday">
-									<li style="margin-left:-54px"><input class="checkbox" type="checkbox"></input><label>Biking</label></li>
-									<li><input class="checkbox" type="checkbox"></input><label>Reading</label></li>
-									<li><input class="checkbox" type="checkbox"></input><label>playing</label></li>
+								</li>
 								</ul>
 							</div>
-								<div class="form"><label>About you</label>
-									<textarea style="margin-bottom:-41;margin-right:1111px; width:380px; height:78px"></textarea>
-								</div>
+							</li>
+							<li class="space">
+							<div><label>Age</label><br>
+							<input type="text" name="age"></input></div>
+							<div class="form"><label>Gender</label><br>
+							<ul class="bday">
+							<li style="margin-left:-52px">
+							<input type="radio" name="gender" value="male"> Male</li><li>
+							<input type="radio" name="gender" value="female"> Female</li>
+							</ul>
+							</div><br>
+							<li class="space"><div style="margin-top:-22px"><label>Interest</label><br>
+							<ul class="bday">
+							<li style="margin-left:-54px"><input class="checkbox" type="checkbox"></input><label>Biking</label></li>
+							<li><input class="checkbox" type="checkbox"></input><label>Reading</label></li>
+							<li><input class="checkbox" type="checkbox"></input><label>playing</label></li>
+							</ul>
+							</div>
+							<div class="form"><label>About you</label>
+							<textarea name="Aboutyou" rows=5 cols=50></textarea>
+							</div>
 							</li><br><br><br>
-		<hr style="width:708px;margin-right:64"><br>
-		<div class="submit">
-			<a href="#">Submit <img src="small_triangle.png"></a>
-		</div>
-	</div>
+							<hr style="width:708px;margin-right:64"><br>
+							<div class="submit">
+							<input type="submit" value="Submit" /><img src="small_triangle.png"></a>
+						</ul>
+							</div>
+							</form>
+						</div>
 		<div class="section">
 			<div class="container">
 				<div class="free">
@@ -225,5 +327,5 @@
 		</div>
 		</div>
 	</body>
-	</head>
+
 </html>
