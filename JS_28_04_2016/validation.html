@@ -4,27 +4,23 @@
 		<title> Vital Partners</title>
 	</head>
 	<script type="text/javascript">
-      function validate()
-      {
+      function validate(){
       	
-         if( document.myForm.Name.value == "" || document.myForm.Name.value == null)
-         {
+         if( document.myForm.Name.value == "" || document.myForm.Name.value == null) {
             alert( "Please provide your First Name!" );
             document.myForm.Name.focus() ;
             return false;
          }
        
        
-         if(document.myForm.LName.value == "" || document.myForm.LName.value == null)
-         {
+         if(document.myForm.LName.value == "" || document.myForm.LName.value == null) {
             alert( "Please provide your Last Name!" );
             document.myForm.LName.focus() ;
             return false;
          }
      
          if( document.myForm.PhoneNo.value == "" || isNaN( document.myForm.PhoneNo.value ) ||
-         document.myForm.PhoneNo.value.length != 10 )
-         {
+         document.myForm.PhoneNo.value.length != 10 ) {
             alert( "Please provide a PhoneNo in the format ##########." );
             document.myForm.PhoneNo.focus() ;
             return false;
@@ -38,18 +34,16 @@
          }
 	       
  
-            
-         	  var x=document.myForm.email.value;
-            var atposition=x.indexOf("@");  
-            var dotposition=x.lastIndexOf(".");  
-            if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length)
-            {  
-            alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
-            return false;  
-            }    
+         var x=document.myForm.email.value;
+         var atposition=x.indexOf("@");  
+         var dotposition=x.lastIndexOf(".");  
+         if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length) {  
+          alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+          return false;  
+         }    
        		
-         if(document.myForm.psw.value.length<8 || document.myForm.psw.value.length>12)
-         {
+
+         if(document.myForm.psw.value.length<8 || document.myForm.psw.value.length>12) {
  				   alert("Password must between 8 to 12 Number & Alphanumeric characters.");
  				   return false;
  				 }
@@ -58,8 +52,8 @@
  			     return false;
  				 }
 
-       if(document.myForm.cpsw.value.length<8 || document.myForm.cpsw.value.length>12)
-         {
+
+         if(document.myForm.cpsw.value.length<8 || document.myForm.cpsw.value.length>12) {
  				   alert("Confirm Password must between 8 to 12 Number & Alphanumeric characters.");
  				   return false;
  				 }
@@ -69,33 +63,54 @@
  				 }
 
 
-				var firstpassword=document.myForm.psw.value;  
-				var secondpassword=document.myForm.cpsw.value;  
-				  
-				if(firstpassword==secondpassword){  
-				return true;  
-				}  
-				else{  
-				alert("password must be same!");  
-				return false;  
-				}  
+				 var firstpassword=document.myForm.psw.value;  
+				 var secondpassword=document.myForm.cpsw.value;  
+				 if(firstpassword!==secondpassword) {  
+					alert("password must be same!"); 
+				  return false;  
+				 } 
  
+				 if( document.myForm.month.value == "-1" ) {
+          alert( "Please provide your month!" );
+          return false;
+         }
 
-				var a = document.myForm.Aboutyou.value;
-				if(a=="")
-				{
-				alert("Please Enter Your Details Here");
-				return false;
+
+         if( document.myForm.day.value == "-1" ) {
+          alert( "Please provide your day!" );
+          return false;
+         }
+
+
+         if( document.myForm.year.value == "-1" ) {
+          alert( "Please provide your year!" );
+          return false;
+         }
+         
+         {
+         var genders = document.getElementsByName("gender");
+         if (genders[0].checked == true ) {
+          alert("Your gender is male");
+         } else if (genders[1].checked == true) {
+            alert("Your gender is female");
+           } else {
+              alert('Select your gender');
+              return false;
+             }
+          } 
+
+         if(myForm.checkbox[0].checked==false && myForm.checkbox[1].checked==false && myForm.checkbox[2].checked==false) {
+			     alert('Please check at least one of the options.');
+			     return false;
+		     }
+
+
+				 var a = document.myForm.Aboutyou.value;
+				 if(a==""){
+				  alert("Please Enter Your Details Here");
+				  return false;
   			 }
-        
-				{
-					var select = document.getElementById("selectmonth");
-					if(select.options.selectIndex == 0)
-					{ 
-					return false; 
-					}
-					return true;
-				}
+       
 			}
 			
       </script>
@@ -129,7 +144,7 @@
 							<div class="form"><label>My Birthdate Is</lable><br>
 								<ul class="bday">
 								<li style="margin-left:-52px">
-								<select id="selectmonth" name="month">
+								<select name="month">
 								<option value="-1" selected>Month</option>
 								<option value="1">Jan</option>
 								<option value="2">Feb</option>
@@ -145,7 +160,7 @@
 								<option value="12">Dec</option></select>
 								</li>
 								<li>
-								<select class="select day" name="day">
+								<select name="day">
 								<option value="-1" selected>Day</option>
 								<option value="1">01</option>
 								<option value="2">02</option>
@@ -180,8 +195,11 @@
 								<option value="31">31</option></select>
 								</li>
 								<li>
-								<select class="select year" name="year">
-								<option value="year">year</option></select>
+								<select name="year">
+								<option value="-1">Year</option>
+							  <option value="1">1993</option>
+								<option value="2">2003</option>
+								<option value="3">2016</option></select>
 								</li>
 								</ul>
 							</div>
@@ -198,9 +216,9 @@
 							</div><br>
 							<li class="space"><div style="margin-top:-22px"><label>Interest</label><br>
 							<ul class="bday">
-							<li style="margin-left:-54px"><input class="checkbox" type="checkbox"></input><label>Biking</label></li>
-							<li><input class="checkbox" type="checkbox"></input><label>Reading</label></li>
-							<li><input class="checkbox" type="checkbox"></input><label>playing</label></li>
+							<li style="margin-left:-54px"><input class="checkbox" name="checkbox" type="checkbox"></input><label>Biking</label></li>
+							<li><input class="checkbox" name="checkbox" type="checkbox"></input><label>Reading</label></li>
+							<li><input class="checkbox" name="checkbox" type="checkbox"></input><label>playing</label></li>
 							</ul>
 							</div>
 							<div class="form"><label>About you</label>
