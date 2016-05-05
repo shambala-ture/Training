@@ -1,27 +1,27 @@
 <html>
-	<head>
-		<script src="jquery-2.2.3.min.js"></script>
-		<script>
-			$(document).ready(function(){
-		    $("#p1").mouseenter(function(){
-	        alert("You entered p1!");
-		    });
-		    $("p").dblclick(function(){
-		    	$(this).hide();
-		    });
-		    $("#p2").mouseleave(function(){
+  <head>
+    <script src="jquery-2.2.3.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("#p1").mouseenter(function(){
+          alert("You entered p1!");
+        });
+        $("p").dblclick(function(){
+          $(this).hide();
+        });
+        $("#p2").mouseleave(function(){
           alert("Bye! You now leave p2!");
         }); 
         $(".test").mousedown(function(){
           alert("Mouse down over test!");
         });
-			});
-		</script>
-	</head>
-	<body>
-		<p id="p1">Enter this paragraph.</p>
-		<p> This is also a paragraph.</p>
-		<p id="p2">You now leave p2.</p>
-		<p class="test">Mouse down over test</p>
-	</body>
+      });
+    </script>
+  </head>
+  <body>
+    <p id="p1">Enter this paragraph.</p>
+    <p> This is also a paragraph.</p>
+    <p id="p2">You now leave p2.</p>
+    <p class="test">Mouse down over test</p>
+  </body>
 </html>
