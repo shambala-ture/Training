@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <style>
+      .descendants * { 
+        display: block;
+        border: 2px solid lightgrey;
+        color: lightgrey;
+        padding: 5px;
+        margin: 15px;
+      }
+    </style>
+    <script src="jquery-2.2.3.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("div").find("span").css({"color": "red", "border": "2px solid red"});
+        $("ul.head").children("li: nth-child(1)").text("Query");
+    });
+    </script>
+  </head>
+  <body>
+    <div class="descendants" style="width:500px;">div (current element) 
+      <p>p (child)
+        <span>span (grandchild)</span>     
+      </p>
+      <p>p (child)
+        <span>span (grandchild)</span>
+      </p> 
+      <ul class="head">
+        <li>Home</li>
+        <li>Dating Blog</li>
+        <li>Who We Help</li>
+        <li>Why Vital</li>
+        <li>Reviews</li>
+        <li>Contact Us</li>
+    </ul>
+    </div>
+  </body>
+</html>

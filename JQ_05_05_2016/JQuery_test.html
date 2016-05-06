@@ -5,13 +5,17 @@
     <script> 
     $(document).ready(function(){
     $("button").click(function(){
-    $("div").animate({right: '1300px',display: 'none'});
-    $("div").animate({right: '650px',display: 'none'});
+      $(".second").toggle();
+      $("div").animate({right: '119px'});
+      $("ul li").first().css("background-color", "yellow");
     });
     });
     </script>
   </head>
   <style>
+    body{
+      background-color:skyblue;
+    }
     button{
       float:right;
       font-size: 15px;
@@ -28,7 +32,7 @@
       position:absolute;
       margin-left:-10px;
       margin-top:75px;
-      display:block
+      display: none;
     }
     .second{
       background:green;
@@ -37,8 +41,8 @@
       position:absolute;
       margin-left:634px;
       margin-top:75px;
-      display:block;
-      float:right
+      float:right;
+      display: none;
     }
     .second ul{
       list-style-type: none;
@@ -50,7 +54,6 @@
   </style>
   <body>
     <button>Menu</button>
-    <div class="first"></div>
     <div class="second">
       <ul>
         <li>CONOCENOS</li>
