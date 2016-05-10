@@ -1,0 +1,337 @@
+<html>
+  <head>
+     <link rel="stylesheet" href="style.css">
+    <title> Vital Partners</title>
+  </head>
+  <script src="jquery-2.2.3.min.js"></script>>
+  <script type="text/javascript">
+    function validate(){
+        
+      if( $("#FName").val() == "" || $("#FName").val() == null) {
+        alert( "Please provide your First Name!" );
+        return false;
+      }
+       
+       
+      if( $("#LName").val() == "" || $("#LName").val() == null) {
+        alert( "Please provide your Last Name!" );
+        return false;
+      }
+        
+
+      if( $("#PhoneNo").val() == "" || isNaN($("#PhoneNo").val()) || $("#PhoneNo").val().length != 10 ) {
+        alert( "Please provide a PhoneNo in the format ##########." );
+        return false;
+      }
+       
+         
+      if( $("#Office").val() == "" || isNaN($("#Office").val()) ) {
+        alert( "Please provide a OfficeNo in the format ##########." );
+        return false;
+      }
+         
+ 
+      var x = $("#email").val();
+      var atposition=x.indexOf("@");  
+      var dotposition=x.lastIndexOf(".");  
+      if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length) {  
+        alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+        return false;  
+      }    
+          
+
+      if($("#psw").val().length < 8 || $("#psw").val().length > 12) {
+        alert("Password must between 8 to 12 Number & Alphanumeric characters.");
+        return false;
+      } else if(/^[a-zA-Z0-9- ]+$/.test($("#psw").val()) == false) {
+        alert(" No Special characters.");
+        return false;
+      }
+
+
+      if($("#cpsw").val().length < 8 || $("#cpsw").val().length > 12) {
+        alert("Confirm Password must between 8 to 12 Number & Alphanumeric characters.");
+        return false;
+      } else if(/^[a-zA-Z0-9- ]+$/.test($("#cpsw").val()) == false) {
+        alert(" No Special characters.");
+        return false;
+      }
+
+
+      var firstpassword= $("#psw").val();  
+      var secondpassword= $("#cpsw").val();  
+      if(firstpassword!==secondpassword) {  
+        alert("password must be same!"); 
+        return false;  
+      } 
+ 
+
+      if( $("#month").val() == "-1" ) {
+        alert( "Please provide your month!" );
+        return false;
+      }
+
+
+      if( $("#day").val() == "-1" ) {
+        alert( "Please provide your day!" );
+        return false;
+      }
+
+
+      if( $("#year").val() == "-1" ) {
+        alert( "Please provide your year!" );
+        return false;
+      }
+       
+
+      if ($("#gender:checked").length == 0){
+        alert("Select your gender");
+        return false;
+      }
+           
+      if ($("#checkbox:checked").length == 0){
+        alert("Select your Interest");
+        return false;
+      }
+
+        
+      var a = $("#Aboutyou").val();
+      if(a==""){
+        alert("Please Enter Your Details Here");
+        return false;
+      }
+    }
+  </script>
+  <body>
+    <img src="logo.png" alt="Vital Logo" style = "width:346px;height:148px;margin-top:-10px;margin-left:135px"> 
+    <h4><i>Call Us Today! (02) 9017 8413</i></h4>
+    <input class="search" type="text" value=" "><img src="top_search.png" style = "width:16px;height:18px;float:right;margin-top:-102px;margin-right:180px"></input>
+    <ul class="head">
+      <li><a href="https://www.google.co.in/">Home</a></li>
+      <li><a href="https://www.google.co.in/">Dating Blog</a></li>
+      <li><a href="https://www.google.co.in/">Who We Help</a></li>
+      <li><a href="https://www.google.co.in/">Why Vital</a></li>
+      <li><a href="https://www.google.co.in/">Reviews</a></li>
+      <li><a href="https://www.google.co.in/">Contact Us</a></li>
+    </ul>
+    <img src="hbg4.png" alt="Vital LifeCycle" style = "width:1304px;height:174px;margin-left:-11px">
+    <div class="sec">
+     <form action="val.html" name="myForm" onsubmit="return(validate());">
+      <ul class="form">
+        <li class="space">
+          <div><label>First Name</lable><br><input type="text" name="Name" id="FName"></input></div>
+          <div class="form"><label>Last Name<br></label><input type="text" name="LName" id="LName"></input></div></li>
+        <li class="space">
+          <div><label>Phone No</lable><br><input type="text" name="PhoneNo" id="PhoneNo"></input></div>
+          <div class="form"><label>Office No<br></label><input type="text" name="Office" id="Office"></input></div></li>
+        <li class="space">
+          <div><label>E-mail</lable><br><input type="email" name="email" id="email" autocomplete="off"></input></div>
+          <div class="form"><label>Password</lable><br><input type="password" name="psw" id="psw"></li>
+        <li class="space">
+          <div><label>Confirm Password</lable><br><input type="password" name="cpsw" id="cpsw"></input></div>
+              <div class="form"><label>My Birthdate Is</lable><br>
+                <ul class="bday">
+                <li style="margin-left:-52px">
+                <select name="month" id="month">
+                <option value="-1" selected>Month</option>
+                <option value="1">Jan</option>
+                <option value="2">Feb</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">Aug</option>
+                <option value="9">Sep</option>
+                <option value="10">Oct</option>
+                <option value="11">Nov</option>
+                <option value="12">Dec</option></select>
+                </li>
+                <li>
+                <select name="day" id="day">
+                <option value="-1" selected>Day</option>
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+                <option value="6">06</option>
+                <option value="7">07</option>
+                <option value="8">08</option>
+                <option value="9">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option></select>
+                </li>
+                <li>
+                <select name="year" id="year">
+                <option value="-1">Year</option>
+                <option value="1993">1993</option>
+                <option value="2">2003</option>
+                <option value="3">2016</option></select>
+                </li>
+                </ul>
+              </div>
+              </li>
+              <li class="space">
+              <div><label>Age</label><br>
+              <input type="text" name="age" id="age"></input></div>
+              <div class="form"><label>Gender</label><br>
+              <ul class="bday">
+              <li style="margin-left:-52px">
+              <input type="radio" name="gender" id="gender" value="male"> Male</li><li>
+              <input type="radio" name="gender" id="gender" value="female"> Female</li>
+              </ul>
+              </div><br>
+              <li class="space"><div style="margin-top:-22px"><label>Interest</label><br>
+              <ul class="bday">
+              <li style="margin-left:-54px"><input class="checkbox" name="checkbox" id="checkbox" type="checkbox"></input><label>Biking</label></li>
+              <li><input class="checkbox" name="checkbox" id="checkbox" type="checkbox"></input><label>Reading</label></li>
+              <li><input class="checkbox" name="checkbox" id="checkbox" type="checkbox"></input><label>playing</label></li>
+              </ul>
+              </div>
+              <div class="form"><label>About you</label>
+              <textarea name="Aboutyou" rows=5 cols=50 id="Aboutyou"></textarea>
+              </div>
+              </li><br><br><br>
+              <hr style="width:708px;margin-right:64"><br>
+              <div class="submit">
+              <input type="submit" value="Submit" /></a>
+            </ul>
+              </div>
+              </form>
+            </div>
+    <div class="section">
+      <div class="container">
+        <div class="free">
+          <div>
+           <img src="icon5.png" style = "display:inline;width:58px;height:69px;margin-top:5px;margin-left:294px;">
+          </div>
+          <div style = "padding:22px;">
+           <h1 style="display:inline;color:white;font-text:22px;padding:28px">FREE: Men Are From Mars</h1>
+          </div>
+          <div class="free1">
+           <a href="#">Download Now</a>
+          </div>
+        </div>
+      </div>    
+    </div>
+    <footer class="footer">
+        <div class="footer1">
+        <span class="left">
+          <img src="foot_logo.png" style="width:295px;height:70px;margin-left:116px">
+        </span>
+        <p class="right">
+          <i>Shortcut your search to happiness right now.Live<br> a life without regrets and take action today!</i>
+        </p>
+        </div>
+        <div>
+          <div>
+          <h1 class="call"><i>Call Us Today! (02) 9017<br>8413</i></h1>
+        </div>
+        <div class="book">
+          <a href="#" style="float:right;margin-right:464px;margin-top:-95">Book an Appoinment <img src="icon7.png"></a>
+          </div>
+          <div class="book">
+          <a href="#" style="float:right;margin-right:256px;margin-top:-95">Contact a Consultant <img src="icon6.png"></a>
+          </div>
+        </div>
+    <div class="padding">
+    <div class="first">
+      <h2>
+      CONTACT INFO
+      </h2><br>
+      <P>4/220 George St, Syndney NSW 2000</P>
+      <P>Phone:(02)9017 8413</P>
+      <P>Email:info@syd.vitalpartners.com.au</P><br><br>
+      <P>Canberra City Act 2600</P>
+      <P>Phone:(02)9017 8426</P>
+      <P>Email:can@syd.vitalpartners.com.au</P>
+    </div>
+    <div class="Link1">
+      <h2 style="color:grey;font-size:23px;margin-top:55px;margin-left:-90">
+      RECENT POSTS
+      </h2><br>
+      <div class="second">
+        <ul>
+          <li><a href="#">How to Recover After a Bad Date</a></li>
+          <li><a href="#">Review | Vital Partners Review</a></li>
+          <li><a href="#">Review | Vital Partners Review</a></li>
+          <li><a href="#">Review | Vital Partners Derek and Julie</a></li>
+          <li><a href="#">7 Rules for a Happy Relationship | Vital <br>Partners Dating Sydney</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="Link2">
+      <h2> RECENT TWEETS</h2>
+      <div>
+        <ul>
+          <li>
+            <p style="margin-left:16px;margin-top:-13px">Are you being vulnerable to find love? via offline…</p>
+            <div class="tweet1">
+            <a href="#">http://t.co/hGCgHEU6If</a>
+            </div>
+            <div style="margin-left:282px;margin-top:-22px">1 week ago</div>
+          </li>
+          <li>
+            <p style="margin-left:16px;margin-top:5px">Are you being vulnerable to find love? via offline…</p>
+            <div class="tweet1">
+            <a href="#">http://t.co/hGCgHEU6If</a>
+            </div>
+            <div style="margin-left:282px;margin-top:-22px">2 week ago</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    </div>
+    <div class="follow">
+      <div class="follow_link1">
+        &copy; VitalPartners.com.au
+      </div>
+      <div class="follow_link2">
+        <a href="contact_us.html">Contact </a> | 
+        <a href="terms_of_use.html">Terms of Use</a> |  
+        <a href="privacy_policy.html">Privacy Policy</a> |  
+        <a href="disclaimer.html">Disclaimer</a>
+      </div>
+      <div class="follow_link3">
+        <span>FOLLOW US:</span>
+        <ul class="style">
+        <li class="style1"><a href="#"></a></li>
+        <li class="style2"><a href="#"></a></li>
+        <li class="style3"><a href="#"></a></li>
+        <li class="style4"><a href="#"></a></li>
+        <li class="style5"><a href="#"></a></li>
+      </ul>
+      </div>
+    </div>
+    <div class="last">
+      <div>
+      <a href="#" style="color:grey;margin-left:435px;text-decoration:none">Who Designed This Site?</a>
+    </div>
+    <div>
+      <a href="#" style="color:grey;float:right;margin-top:-18px;margin-right:433px;text-decoration:none">Who  Built This Site?</a>
+    </div>
+    </div>
+  </body>
+
+</html>
