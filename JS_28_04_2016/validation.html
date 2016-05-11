@@ -5,136 +5,161 @@
   </head>
   <script type="text/javascript">
     function getage(birth){
-    var today = new Date();
-    var nowyear = today.getFullYear();
-    var nowmonth = today.getMonth();
-    var nowday = today.getDate();
+      var today = new Date();
+      var nowyear = today.getFullYear();
+      var nowmonth = today.getMonth();
+      var nowday = today.getDate();
 
-    var birthyear = birth.getFullYear();
-    var birthmonth = birth.getMonth();
-    var birthday = birth.getDate();
+      var birthyear = birth.getFullYear();
+      var birthmonth = birth.getMonth();
+      var birthday = birth.getDate();
 
-    var age = nowyear - birthyear;
-    var age_month = nowmonth - birthmonth;
-    var age_day = nowday - birthday;
+      var age = nowyear - birthyear;
+      var age_month = nowmonth - birthmonth;
+      var age_day = nowday - birthday;
 
-    if(age_month < 0 || (age_month == 0 && age_day <0)) {
-    age = parseInt(age) -1;
+      if(age_month < 0 || (age_month == 0 && age_day <0)) {
+        age = parseInt(age) -1;
+      }
+        document.myForm.age.value = age;
+        return age;
     }
-    document.myForm.age.value = age;
-    return age;
-    }
+    
+    function isValidDay(dateStr){
+      var msg = "";
+      var datePat = /^(\d{1,2})(\/|-)(\d{1,2})\2(\d{4})$/;
+      var day = dateStr.getDate()
+      var month = dateStr.getMonth()
+      var year = dateStr.getFullYear()
 
+      if ((month==4 || month==6 || month==9 || month==11) && day==31) {
+        msg = "Month "+month+" doesn't have 31 days!";
+        return msg;
+      }
+
+      if (month == 2) { // check for february 29th
+        var isleap = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
+        if ( day>29 || (day==29 && !isleap)) {
+          msg = "February " + year + " doesn't have " + day + " days!";
+          return msg;
+        }
+      }
+      return true;
+    }
 
     function validate(){
-    if( document.myForm.Name.value == "" || document.myForm.Name.value == null) {
-    alert( "Please provide your First Name!" );
-    document.myForm.Name.focus() ;
-    return false;
-    }
-
-
-    if(document.myForm.LName.value == "" || document.myForm.LName.value == null) {
-    alert( "Please provide your Last Name!" );
-    document.myForm.LName.focus() ;
-    return false;
-    }
-
-
-    if( document.myForm.PhoneNo.value == "" || isNaN( document.myForm.PhoneNo.value ) ||
-    document.myForm.PhoneNo.value.length != 10 ) {
-    alert( "Please provide a PhoneNo in the format ##########." );
-    document.myForm.PhoneNo.focus() ;
-    return false;
-    }
-
-
-    if( document.myForm.Office.value == "" || isNaN( document.myForm.Office.value ) ) {
-    alert( "Please provide a OfficeNo in the format ##########." );
-    document.myForm.Office.focus() ;
-    return false;
-    }
-
-
-    var x=document.myForm.email.value;
-    var atposition=x.indexOf("@");  
-    var dotposition=x.lastIndexOf(".");  
-    if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length) {  
-    alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
-    return false;  
-    }    
-
-
-    if(document.myForm.psw.value.length<8 || document.myForm.psw.value.length>12) {
-    alert("Password must between 8 to 12 Number & Alphanumeric characters.");
-    return false;
-    }else if(/^[a-zA-Z0-9- ]+$/.test(document.myForm.psw.value) == false) {
-    alert(" No Special characters.");
-    return false;
-    }
-
-
-    if(document.myForm.cpsw.value.length<8 || document.myForm.cpsw.value.length>12) {
-    alert("Confirm Password must between 8 to 12 Number & Alphanumeric characters.");
-    return false;
-    }else if(/^[a-zA-Z0-9- ]+$/.test(document.myForm.psw.value) == false) {
-    alert(" No Special characters.");
-    return false;
-    }
-
-
-    var firstpassword=document.myForm.psw.value;  
-    var secondpassword=document.myForm.cpsw.value;  
-    if(firstpassword!==secondpassword) {  
-    alert("password must be same!"); 
-    return false;  
-    } 
-
-    if( document.myForm.month.value == "-1" ) {
-    alert( "Please provide your month!" );
-    return false;
-    }
-
-
-    if( document.myForm.day.value == "-1" ) {
-    alert( "Please provide your day!" );
-    return false;
-    }
-
-
-    if( document.myForm.year.value == "-1" ) {
-    alert( "Please provide your year!" );
-    return false;
-    }
-
-
-    m=document.myForm.month.value;
-    d=document.myForm.day.value;
-    y=document.myForm.year.value;
-    if(m && d && y !== ""){
-      d1= new Date(y,m,d);
-      var age =getage(d1);
-    }
-
-    var genders = document.getElementsByName("gender");
-    if (genders[0].checked == false && genders[1].checked == false) {
-      alert('Select your gender');
+      if( document.myForm.Name.value == "" || document.myForm.Name.value == null) {
+      alert( "Please provide your First Name!" );
+      document.myForm.Name.focus() ;
       return false;
+      }
+
+
+      if(document.myForm.LName.value == "" || document.myForm.LName.value == null) {
+        alert( "Please provide your Last Name!" );
+        document.myForm.LName.focus() ;
+        return false;
+      }
+
+
+      if( document.myForm.PhoneNo.value == "" || isNaN( document.myForm.PhoneNo.value ) ||
+        document.myForm.PhoneNo.value.length != 10 ) {
+        alert( "Please provide a PhoneNo in the format ##########." );
+        document.myForm.PhoneNo.focus() ;
+        return false;
+      }
+
+
+      if( document.myForm.Office.value == "" || isNaN( document.myForm.Office.value ) ) {
+        alert( "Please provide a OfficeNo in the format ##########." );
+        document.myForm.Office.focus() ;
+        return false;
+      }
+
+
+      var x=document.myForm.email.value;
+      var atposition=x.indexOf("@");  
+      var dotposition=x.lastIndexOf(".");  
+      if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length) {  
+      alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+      return false;  
+      }    
+
+
+      if(document.myForm.psw.value.length<8 || document.myForm.psw.value.length>12) {
+        alert("Password length must between 8 to 12 Number & Alphanumeric characters.");
+        return false;
+      }else if(/^[a-zA-Z0-9- ]+$/.test(document.myForm.psw.value) == false) {
+        alert(" No Special characters in password.");
+        return false;
+      }
+
+
+      if(document.myForm.cpsw.value.length<8 || document.myForm.cpsw.value.length>12) {
+        alert("Confirm Password length must between 8 to 12 Number & Alphanumeric characters.");
+        return false;
+      }else if(/^[a-zA-Z0-9- ]+$/.test(document.myForm.psw.value) == false) {
+        alert(" No Special characters in Confirm Password.");
+        return false;
+      }
+
+
+      var firstpassword=document.myForm.psw.value;  
+      var secondpassword=document.myForm.cpsw.value;  
+      if(firstpassword!==secondpassword) {  
+        alert("password must be same!"); 
+        return false;  
+      } 
+
+      if( document.myForm.month.value == "-1" ) {
+        alert( "Please provide your month!" );
+        return false;
+      }
+
+
+      if( document.myForm.day.value == "-1" ) {
+        alert( "Please provide your day!" );
+        return false;
+      }
+
+
+      if( document.myForm.year.value == "-1" ) {
+        alert( "Please provide your year!" );
+        return false;
+      }
+
+
+      m=document.myForm.month.value;
+      d=document.myForm.day.value;
+      y=document.myForm.year.value;
+      if(m && d && y !== ""){
+        d1= new Date(y,m,d);
+        var age = getage(d1);
+        var isValidDateMsg = isValidDay(d1)
+        if (isValidDateMsg != true){
+         alert(isValidDateMsg);
+        }
+      }
+
+      var genders = document.getElementsByName("gender");
+      if (genders[0].checked == false && genders[1].checked == false) {
+        alert('Select your gender');
+        return false;
+      }
+
+
+      if(myForm.checkbox[0].checked==false && myForm.checkbox[1].checked==false && myForm.checkbox[2].checked==false) {
+        alert('Please check at least one of the options.');
+        return false;
+      }
+
+
+      var a = document.myForm.Aboutyou.value;
+      if(a==""){
+      alert("Please Enter Your Details Here");
+      return false;
+      }
     }
-
-
-    if(myForm.checkbox[0].checked==false && myForm.checkbox[1].checked==false && myForm.checkbox[2].checked==false) {
-    alert('Please check at least one of the options.');
-    return false;
-    }
-
-
-    var a = document.myForm.Aboutyou.value;
-    if(a==""){
-    alert("Please Enter Your Details Here");
-    return false;
-    }
-  }
 
   </script>
   <body>

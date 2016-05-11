@@ -5,6 +5,47 @@
   </head>
   <script src="jquery-2.2.3.min.js"></script>>
   <script type="text/javascript">
+  function getage(birth){
+      var today = new Date();
+      var nowyear = today.getFullYear();
+      var nowmonth = today.getMonth();
+      var nowday = today.getDate();
+
+      var birthyear = birth.getFullYear();
+      var birthmonth = birth.getMonth();
+      var birthday = birth.getDate();
+
+      var age = nowyear - birthyear;
+      var age_month = nowmonth - birthmonth;
+      var age_day = nowday - birthday;
+
+      if(age_month < 0 || (age_month == 0 && age_day <0)) {
+        age = parseInt(age) -1;
+      }
+        document.myForm.age.value = age;
+        return age;
+    }
+    
+    function isValidDay(dateStr){
+      var msg = "";
+      var datePat = /^(\d{1,2})(\/|-)(\d{1,2})\2(\d{4})$/;
+      var day = dateStr.getDate()
+      var month = dateStr.getMonth()
+      var year = dateStr.getFullYear()
+
+      if ((month==4 || month==6 || month==9 || month==11) && day==31) {
+        msg = "Month "+month+" doesn't have 31 days!";
+        return msg;
+      }
+
+      if (month == 2) { // check for february 29th
+        var isleap = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
+        if ( day>29 || (day==29 && !isleap)) {
+          msg = "February " + year + " doesn't have " + day + " days!";
+          return msg;
+        }
+      }
+    }
     function validate(){
         
       if( $("#FName").val() == "" || $("#FName").val() == null) {
@@ -19,11 +60,10 @@
       }
         
 
-      if( $("#PhoneNo").val() == "" || isNaN($("#PhoneNo").val()) || $("#PhoneNo").val().length != 10 ) {
+      if( $("#PhoneNo").val() == "" || isNaN($("#PhoneNo").val()) || $("#PhoneNo").val().length != 10) {
         alert( "Please provide a PhoneNo in the format ##########." );
         return false;
       }
-       
          
       if( $("#Office").val() == "" || isNaN($("#Office").val()) ) {
         alert( "Please provide a OfficeNo in the format ##########." );
@@ -41,19 +81,19 @@
           
 
       if($("#psw").val().length < 8 || $("#psw").val().length > 12) {
-        alert("Password must between 8 to 12 Number & Alphanumeric characters.");
+        alert("Password length must between 8 to 12 Number & Alphanumeric characters.");
         return false;
       } else if(/^[a-zA-Z0-9- ]+$/.test($("#psw").val()) == false) {
-        alert(" No Special characters.");
+        alert(" No Special characters in password.");
         return false;
       }
 
 
       if($("#cpsw").val().length < 8 || $("#cpsw").val().length > 12) {
-        alert("Confirm Password must between 8 to 12 Number & Alphanumeric characters.");
+        alert("Confirm Password length must between 8 to 12 Number & Alphanumeric characters.");
         return false;
       } else if(/^[a-zA-Z0-9- ]+$/.test($("#cpsw").val()) == false) {
-        alert(" No Special characters.");
+        alert(" No Special characters in Confirm password.");
         return false;
       }
 
@@ -66,7 +106,7 @@
       } 
  
 
-      if( $("#month").val() == "-1" ) {
+      if( $("#month").val() == "-1" || $("#month").val() !== "feb" ) {
         alert( "Please provide your month!" );
         return false;
       }
@@ -83,6 +123,17 @@
         return false;
       }
        
+      m=document.myForm.month.value;
+      d=document.myForm.day.value;
+      y=document.myForm.year.value;
+      if(m && d && y !== ""){
+        d1= new Date(y,m,d);
+        var age = getage(d1);
+        var isValidDateMsg = isValidDay(d1)
+        alert(isValidDateMsg)
+        return false;
+      }
+
 
       if ($("#gender:checked").length == 0){
         alert("Select your gender");
@@ -125,7 +176,7 @@
           <div><label>Phone No</lable><br><input type="text" name="PhoneNo" id="PhoneNo"></input></div>
           <div class="form"><label>Office No<br></label><input type="text" name="Office" id="Office"></input></div></li>
         <li class="space">
-          <div><label>E-mail</lable><br><input type="email" name="email" id="email" autocomplete="off"></input></div>
+          <div><label>E-mail</lable><br><input type="text" name="email" id="email" autocomplete="off"></input></div>
           <div class="form"><label>Password</lable><br><input type="password" name="psw" id="psw"></li>
         <li class="space">
           <div><label>Confirm Password</lable><br><input type="password" name="cpsw" id="cpsw"></input></div>
@@ -186,15 +237,14 @@
                 <select name="year" id="year">
                 <option value="-1">Year</option>
                 <option value="1993">1993</option>
-                <option value="2">2003</option>
-                <option value="3">2016</option></select>
                 </li>
                 </ul>
               </div>
               </li>
               <li class="space">
               <div><label>Age</label><br>
-              <input type="text" name="age" id="age"></input></div>
+              <input type="text" name="age" id="age"></input>
+              </div>
               <div class="form"><label>Gender</label><br>
               <ul class="bday">
               <li style="margin-left:-52px">

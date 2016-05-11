@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>
+            DOB calculations
+        </title>
+        <script type='text/javascript' src='jquery-2.2.3.min.js'></script>
+        <script type="text/javascript">
+            $(function() {
+
+                $('#datepicker').datepicker({
+                    changeMonth: true,
+                    changeYear: true,
+                    dateFormat: 'mm/dd/yy',
+                    //firstDay: 1,
+                    onSelect: function(dateText, inst) {
+                        dateText.split('/');
+                        Bdate = new Date(dateText[2], dateText[0] - 1, dateText[1]);
+                        BDateArr = ('' + Bdate).split(' ');
+                        //document.getElementById('DOW').value = BDateArr[0]; 
+                        Cdate = new Date;
+                        CDateArr = ('' + Cdate).split(" ");
+                        Age = CDateArr[3] - BDateArr[3];
+                        document.getElementById('AGE').value = Age;
+                        // DOBcalc(dateText); 
+                        //DOBcalc(); 
+                    }
+                })
+
+            });
+        </script>
+    </head>
+
+    <body>
+        <form>
+            DOB (mm/dd/yyyy):
+            <input type="text" id="datepicker" value=''>
+            Age:
+            <input id="AGE" type="text" value="">
+        </form>
+    </body>
+</html>

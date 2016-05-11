@@ -45,7 +45,7 @@
 
   			function textAlphanumeric(inputtext, alertMsg){
         var alphaExp = /^[0-9a-zA-Z]+$/;
-        if(inputtext.value.psw(alphaExp)){
+        if(inputtext.value.match(alphaExp)){
         return true;
         }else{
         document.getElementById('p5').innerText = alertMsg;
