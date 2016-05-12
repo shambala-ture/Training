@@ -5,154 +5,112 @@
   </head>
   <script src="jquery-2.2.3.min.js"></script>>
   <script type="text/javascript">
-  function getage(birth){
-      var today = new Date();
-      var nowyear = today.getFullYear();
-      var nowmonth = today.getMonth();
-      var nowday = today.getDate();
+ 
+      function validate(){
 
-      var birthyear = birth.getFullYear();
-      var birthmonth = birth.getMonth();
-      var birthday = birth.getDate();
-
-      var age = nowyear - birthyear;
-      var age_month = nowmonth - birthmonth;
-      var age_day = nowday - birthday;
-
-      if(age_month < 0 || (age_month == 0 && age_day <0)) {
-        age = parseInt(age) -1;
-      }
-        document.myForm.age.value = age;
-        return age;
-    }
-    
-    function isValidDay(dateStr){
-      var msg = "";
-      var datePat = /^(\d{1,2})(\/|-)(\d{1,2})\2(\d{4})$/;
-      var day = dateStr.getDate()
-      var month = dateStr.getMonth()
-      var year = dateStr.getFullYear()
-
-      if ((month==4 || month==6 || month==9 || month==11) && day==31) {
-        msg = "Month "+month+" doesn't have 31 days!";
-        return msg;
-      }
-
-      if (month == 2) { // check for february 29th
-        var isleap = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0));
-        if ( day>29 || (day==29 && !isleap)) {
-          msg = "February " + year + " doesn't have " + day + " days!";
-          return msg;
-        }
-      }
-    }
-    function validate(){
         
-      if( $("#FName").val() == "" || $("#FName").val() == null) {
-        alert( "Please provide your First Name!" );
-        return false;
-      }
+         if( $("#FName").val() == "" || $("#FName").val() == null) {
+            alert( "Please provide your First Name!" );
+            return false;
+         }
        
        
-      if( $("#LName").val() == "" || $("#LName").val() == null) {
-        alert( "Please provide your Last Name!" );
-        return false;
-      }
+         if( $("#LName").val() == "" || $("#LName").val() == null) {
+            alert( "Please provide your Last Name!" );
+            return false;
+         }
         
-
-      if( $("#PhoneNo").val() == "" || isNaN($("#PhoneNo").val()) || $("#PhoneNo").val().length != 10) {
-        alert( "Please provide a PhoneNo in the format ##########." );
-        return false;
-      }
+         if( $("#PhoneNo").val() == "" || isNaN($("#PhoneNo").val()) || $("#PhoneNo").val().length != 10 ) {
+         alert( "Please provide a PhoneNo in the format ##########." );
+          return false;
+         }
+       
          
-      if( $("#Office").val() == "" || isNaN($("#Office").val()) ) {
-        alert( "Please provide a OfficeNo in the format ##########." );
-        return false;
-      }
+         if( $("#Office").val() == "" || isNaN($("#Office").val()) ) {
+            alert( "Please provide a OfficeNo in the format ##########." );
+            return false;
+         }
          
  
-      var x = $("#email").val();
-      var atposition=x.indexOf("@");  
-      var dotposition=x.lastIndexOf(".");  
-      if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length) {  
-        alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
-        return false;  
-      }    
+         var x = $("#email").val();
+         var atposition=x.indexOf("@");  
+         var dotposition=x.lastIndexOf(".");  
+         if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length) {  
+          alert("Please enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+          return false;  
+         }    
           
 
-      if($("#psw").val().length < 8 || $("#psw").val().length > 12) {
-        alert("Password length must between 8 to 12 Number & Alphanumeric characters.");
-        return false;
-      } else if(/^[a-zA-Z0-9- ]+$/.test($("#psw").val()) == false) {
-        alert(" No Special characters in password.");
-        return false;
-      }
+         if($("#psw").val().length < 8 || $("#psw").val().length > 12) {
+           alert("Password must between 8 to 12 Number & Alphanumeric characters.");
+           return false;
+         }
+         else if(/^[a-zA-Z0-9- ]+$/.test($("#psw").val()) == false) {
+           alert(" No Special characters.");
+           return false;
+         }
 
 
-      if($("#cpsw").val().length < 8 || $("#cpsw").val().length > 12) {
-        alert("Confirm Password length must between 8 to 12 Number & Alphanumeric characters.");
-        return false;
-      } else if(/^[a-zA-Z0-9- ]+$/.test($("#cpsw").val()) == false) {
-        alert(" No Special characters in Confirm password.");
-        return false;
-      }
+         if($("#cpsw").val().length < 8 || $("#cpsw").val().length > 12) {
+           alert("Confirm Password must between 8 to 12 Number & Alphanumeric characters.");
+           return false;
+         }
+         else if(/^[a-zA-Z0-9- ]+$/.test($("#cpsw").val()) == false) {
+           alert(" No Special characters.");
+           return false;
+         }
 
 
-      var firstpassword= $("#psw").val();  
-      var secondpassword= $("#cpsw").val();  
-      if(firstpassword!==secondpassword) {  
-        alert("password must be same!"); 
-        return false;  
-      } 
+         var firstpassword= $("#psw").val();  
+         var secondpassword= $("#cpsw").val();  
+         if(firstpassword!==secondpassword) {  
+          alert("password must be same!"); 
+          return false;  
+         } 
  
-
-      if( $("#month").val() == "-1" || $("#month").val() !== "feb" ) {
-        alert( "Please provide your month!" );
-        return false;
-      }
-
-
-      if( $("#day").val() == "-1" ) {
-        alert( "Please provide your day!" );
-        return false;
-      }
+         if( $("#month").val() == "-1" ) {
+          alert( "Please provide your month!" );
+          return false;
+         }
 
 
-      if( $("#year").val() == "-1" ) {
-        alert( "Please provide your year!" );
-        return false;
-      }
+         if( $("#day").val() == "-1" ) {
+          alert( "Please provide your day!" );
+          return false;
+         }
+
+
+         if( $("#year").val() == "-1" ) {
+          alert( "Please provide your year!" );
+          return false;
+         }
        
-      m=document.myForm.month.value;
-      d=document.myForm.day.value;
-      y=document.myForm.year.value;
-      if(m && d && y !== ""){
-        d1= new Date(y,m,d);
-        var age = getage(d1);
-        var isValidDateMsg = isValidDay(d1)
-        alert(isValidDateMsg)
-        return false;
-      }
+         dob = new Date(dob);
+         var today = new Date();
+         var age = Math.floor((today-dob) / (365.25 * 24 * 60 * 60 * 1000));
+         $('#age').html(age+' years old');
 
-
-      if ($("#gender:checked").length == 0){
-        alert("Select your gender");
-        return false;
-      }
+         if ($("#gender:checked").length == 0){
+          alert("Select your gender");
+          return false;
+        }
            
-      if ($("#checkbox:checked").length == 0){
-        alert("Select your Interest");
-        return false;
-      }
+          if ($("#checkbox:checked").length == 0){
+          alert("Select your Interest");
+          return false;
+        }
 
         
-      var a = $("#Aboutyou").val();
-      if(a==""){
-        alert("Please Enter Your Details Here");
-        return false;
+         var a = $("#Aboutyou").val();
+         if(a==""){
+          alert("Please Enter Your Details Here");
+          return false;
+         }
+       
       }
-    }
-  </script>
+      
+      </script>
+>>>>>>> 000b6fe891558a5040884343bf249577b4926870
   <body>
     <img src="logo.png" alt="Vital Logo" style = "width:346px;height:148px;margin-top:-10px;margin-left:135px"> 
     <h4><i>Call Us Today! (02) 9017 8413</i></h4>
@@ -176,7 +134,11 @@
           <div><label>Phone No</lable><br><input type="text" name="PhoneNo" id="PhoneNo"></input></div>
           <div class="form"><label>Office No<br></label><input type="text" name="Office" id="Office"></input></div></li>
         <li class="space">
+<<<<<<< HEAD
           <div><label>E-mail</lable><br><input type="text" name="email" id="email" autocomplete="off"></input></div>
+=======
+          <div><label>E-mail</lable><br><input type="email" name="email" id="email" autocomplete="off"></input></div>
+>>>>>>> 000b6fe891558a5040884343bf249577b4926870
           <div class="form"><label>Password</lable><br><input type="password" name="psw" id="psw"></li>
         <li class="space">
           <div><label>Confirm Password</lable><br><input type="password" name="cpsw" id="cpsw"></input></div>
@@ -237,14 +199,23 @@
                 <select name="year" id="year">
                 <option value="-1">Year</option>
                 <option value="1993">1993</option>
+<<<<<<< HEAD
+=======
+                <option value="2">2003</option>
+                <option value="3">2016</option></select>
+>>>>>>> 000b6fe891558a5040884343bf249577b4926870
                 </li>
                 </ul>
               </div>
               </li>
               <li class="space">
               <div><label>Age</label><br>
+<<<<<<< HEAD
               <input type="text" name="age" id="age"></input>
               </div>
+=======
+              <input type="text" name="age" id="age"></input></div>
+>>>>>>> 000b6fe891558a5040884343bf249577b4926870
               <div class="form"><label>Gender</label><br>
               <ul class="bday">
               <li style="margin-left:-52px">
