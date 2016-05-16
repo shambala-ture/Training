@@ -81,7 +81,7 @@ select min(SALARY) from (select * from Employee order by SALARY desc limit 3)a;
 
 -- 6)  Get first name from employee table after removing white space from left side.
 
-select * from Employee;
+-- select * from Employee;
 -- +-------------+------------+-----------+---------+--------------+---------------+
 -- | EMPLOYEE_ID | FIRST_NAME | LAST_NAME | SALARY  | JOINING_DATE | DEPARTMENT_ID |
 -- +-------------+------------+-----------+---------+--------------+---------------+
@@ -212,7 +212,7 @@ show table status;
 -- 12) Get department name and department wise average salary from employee and department table order by salary ascending?
 
 
-select DEPARTMENT_NAME, AVG(SALARY) as avg  from Department D  inner join Employee A on A.DEPARTMENT_ID = D.DEPARTMENT_ID group by DEPARTMENT_NAME order by avg asc;
+select DEPARTMENT_NAME, AVG(SALARY) as avg  from Department D  inner join Employee A on A.DEPARTMENT_ID=D.DEPARTMENT_ID group by DEPARTMENT_NAME order by avg asc;
 
 -- +-----------------+-------------+
 -- | DEPARTMENT_NAME | avg         |
