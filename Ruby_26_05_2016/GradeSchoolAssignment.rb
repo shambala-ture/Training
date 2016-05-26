@@ -1,4 +1,3 @@
-
 $hash = {}
 
 def select_choice

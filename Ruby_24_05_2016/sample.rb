@@ -22,7 +22,7 @@
   end
 
   def test_an_empty_school
-    assert_equal({})
+   hash({})
   end
 
   def test_add_student
@@ -34,5 +34,5 @@
     school.add("Blair", 2)
     school.add("James", 2)
     school.add("Paul", 2)
-    assert_equal({2 => ["Blair", "James", "Paul"]})
+    hash({2 => ["Blair", "James", "Paul"]})
   end
