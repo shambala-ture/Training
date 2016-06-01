@@ -34,6 +34,7 @@ def sort(ch)
         puts "#{k} : #{v.join(', ')}"
       end
       select_choice
+
     when '3'
       puts "=============Sorted list=================="
       
@@ -43,6 +44,7 @@ def sort(ch)
       end
       puts b.to_h
       select_choice
+      
     when '4'
       puts "Enter your grade"
       g=gets.chomp

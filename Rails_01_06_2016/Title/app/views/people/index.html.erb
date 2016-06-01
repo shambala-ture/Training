@@ -1,0 +1,20 @@
+<h1>Form</h1>
+
+<table>
+  <tr>
+    <th>First_name</th>
+    <th>Last_name</th>
+    <th>Email</th>
+    <th>About_you</th>
+    <th colspan="2"></th>
+  </tr>
+ 
+  <% @person.each do |person| %>
+    <tr>
+      <td><%= person.First_name %></td>
+      <td><%= person.Last_name %></td>
+      <td><%= person.Email %></td>
+      <td><%= person.About_you %></td>
+    </tr>
+  <% end %>
+</table>
